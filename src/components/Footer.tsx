@@ -57,7 +57,7 @@ const Footer = () => {
             </button>
           </form>
           <div className="footer-contact-mini">
-            <span><MapPin size={14} /> Silicon Valley / Neo Tokyo</span>
+            <span><MapPin size={14} /> Solan near Regional hospital, HP</span>
           </div>
         </div>
       </div>
