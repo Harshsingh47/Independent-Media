@@ -381,7 +381,7 @@ export default function Home() {
                             width: '100%', 
                             height: '100%', 
                             objectFit: 'contain',
-                            filter: icon.invertInDark ? 'brightness(0)' : 'none'
+                            filter: (icon as any).invertInDark ? 'brightness(0)' : 'none'
                           }} 
                         />
                       </div>
