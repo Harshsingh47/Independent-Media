@@ -16,12 +16,12 @@ const Footer = () => {
           <p className="footer-desc">
             We are architects of the digital future, blending cutting-edge technology with cinematic design to build products that scale and inspire.
           </p>
-          <div className="social-links">
+          {/* <div className="social-links">
             <a href="#" className="social-icon"><Linkedin size={18} /></a>
             <a href="#" className="social-icon"><Twitter size={18} /></a>
             <a href="#" className="social-icon"><Instagram size={18} /></a>
             <a href="#" className="social-icon"><Github size={18} /></a>
-          </div>
+          </div> */}
         </div>
 
         <div className="footer-links">

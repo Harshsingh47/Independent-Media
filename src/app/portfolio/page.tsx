@@ -2,15 +2,35 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { ExternalLink, Github, Eye } from "lucide-react";
 import Link from "next/link";
 
 export default function Portfolio() {
   const [filter, setFilter] = useState("All");
 
-  const categories = ["All", "AI & ML", "Web3 & Blockchain", "Creative & Brand"];
+  const categories = ["All", "Web & Enterprise", "AI & ML", "Web3 & Blockchain", "Creative & Brand"];
 
   const projects = [
+    {
+      title: "The Swasth Bharat",
+      category: "Web & Enterprise",
+      description: "A comprehensive healthcare platform connecting communities with technology-driven medical solutions.",
+      tech: ["Next.js", "Node.js", "PostgreSQL"],
+      image: "/tsb.png",
+    },
+    {
+      title: "Automated DeFi Arbitrage",
+      category: "Web3 & Blockchain",
+      description: "Advanced trading bot monitoring price differences across decentralized exchanges for automated execution.",
+      tech: ["Solidity", "Rust", "Web3.js"],
+      image: "/arbitrage.png",
+    },
+    {
+      title: "Logistics Intelligence",
+      category: "AI & ML",
+      description: "AI-powered analytics platform transforming shipment data into real-time insights via natural language.",
+      tech: ["Python", "OpenAI", "React"],
+      image: "/ailogistic.png",
+    },
     {
       title: "NeuralTrade AI",
       category: "AI & ML",
@@ -25,27 +45,7 @@ export default function Portfolio() {
       tech: ["Solidity", "Rust", "Next.js", "Ether.js"],
       image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=800",
     },
-    {
-      title: "Neo Tokyo Identity",
-      category: "Creative & Brand",
-      description: "Complete visual identity and cinematic brand guidelines for a futuristic tech hub.",
-      tech: ["After Effects", "Blender", "Figma"],
-      image: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=800",
-    },
-    {
-      title: "SaaS Matrix",
-      category: "AI & ML",
-      description: "Enterprise-grade automation platform for cloud infrastructure management.",
-      tech: ["Node.js", "Kubernetes", "Next.js"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-    },
-    {
-      title: "ChainGuard Protocol",
-      category: "Web3 & Blockchain",
-      description: "Security auditing tool for smart contracts with real-time vulnerability detection.",
-      tech: ["Go", "Solidity", "TypeScript"],
-      image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=800",
-    },
+
     {
       title: "Digital Nomad CRM",
       category: "Creative & Brand",
@@ -103,12 +103,6 @@ export default function Portfolio() {
             >
               <div className="project-image-container">
                 <img src={project.image} alt={project.title} className="project-image" />
-                <div className="project-overlay">
-                  <div className="overlay-btns">
-                    <button className="overlay-btn"><Eye size={20} /></button>
-                    <button className="overlay-btn"><ExternalLink size={20} /></button>
-                  </div>
-                </div>
               </div>
               <div className="project-info">
                 <span className="project-cat">{project.category}</span>

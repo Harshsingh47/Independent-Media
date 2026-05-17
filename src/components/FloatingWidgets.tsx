@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Phone, MessageSquare } from "lucide-react";
 
 export default function FloatingWidgets() {
-  const WHATSAPP_NUMBER = "917018227148";
+  const WHATSAPP_NUMBER = "918091556755";
   const PRE_FILLED_MESSAGE = encodeURIComponent("Hello, I want a service related to software development");
 
   return (

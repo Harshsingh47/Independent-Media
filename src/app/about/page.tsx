@@ -6,8 +6,8 @@ import { Rocket, Target, Zap, ShieldCheck, Heart, Sparkles } from "lucide-react"
 export default function About() {
   const stats = [
     { number: "150+", label: "Projects Delivered" },
-    { number: "50+", label: "AI Solutions" },
-    { number: "12", label: "Global Awards" },
+    { number: "100+", label: "Digital Architects" },
+    { number: "4", label: "Continents Served" },
     { number: "99%", label: "Client Satisfaction" },
   ];
 
@@ -15,31 +15,31 @@ export default function About() {
     { 
       year: "2020", 
       title: "Foundation", 
-      description: "Independent Medias was born with a vision to bridge the gap between creative design and complex engineering.",
+      description: "Inception of a new digital paradigm. We established our core foundation, assembling a premier team of developers and designers united by a single vision: engineering flawless, high-performance digital experiences.",
       icon: <Sparkles size={24} />
     },
     { 
       year: "2021", 
       title: "AI Pivot", 
-      description: "Expanded into AI and Machine Learning, helping enterprises automate complex workflows.",
+      description: "The dawn of intelligence. We launched our dedicated AI division, pioneering machine learning workflows and automated systems that empowered our earliest enterprise partners to scale exponentially.",
       icon: <Zap size={24} />
     },
     { 
       year: "2022", 
       title: "Web3 Era", 
-      description: "Launched our dedicated Blockchain division, building secure dApps and smart contracts.",
+      description: "Entering the decentralized frontier. Our blockchain engineering unit was formed, successfully auditing and deploying resilient smart contracts and Web3 infrastructure for next-generation financial protocols.",
       icon: <ShieldCheck size={24} />
     },
     { 
       year: "2023", 
       title: "Creative Transformation", 
-      description: "Integrated full-scale Digital Marketing and Cinematic Video departments to provide 360° digital growth.",
+      description: "The creative evolution. Recognizing the need for holistic brand dominance, we integrated cinematic video production and data-driven growth marketing to deliver end-to-end 360° digital transformation.",
       icon: <Target size={24} />
     },
     { 
       year: "2024", 
       title: "Global Scale", 
-      description: "Now serving clients across 4 continents with a team of 100+ digital architects.",
+      description: "A global powerhouse. We've scaled our operations across four continents, deploying a formidable collective of over 100 digital architects, engineers, and strategists serving industry-leading brands worldwide.",
       icon: <Rocket size={24} />
     },
   ];
@@ -156,37 +156,180 @@ export default function About() {
       </section>
 
       {/* Journey Section */}
-      <section className="journey-section">
-        <div className="section-header">
+      <section className="journey-section" style={{ padding: '120px 10%', position: 'relative', overflow: 'hidden', background: '#010816' }}>
+        <div className="section-header" style={{ marginBottom: '100px', position: 'relative', zIndex: 1 }}>
           <motion.h2 className="section-title" {...fadeInUp}>Our Journey</motion.h2>
           <motion.p {...fadeInUp} transition={{ delay: 0.2 }}>A chronological path of innovation and growth.</motion.p>
         </div>
         
-        <div className="timeline-container">
-          <div className="timeline-main-line"></div>
+        <div className="timeline-container" style={{ position: 'relative', maxWidth: '1200px', margin: '0 auto' }}>
+          {/* Main glowing line */}
+          <div style={{
+            position: 'absolute',
+            left: '50%',
+            top: '0',
+            bottom: '0',
+            width: '2px',
+            background: 'linear-gradient(to bottom, transparent, rgba(0, 242, 255, 0.5), rgba(0, 242, 255, 0.8), rgba(0, 242, 255, 0.5), transparent)',
+            transform: 'translateX(-50%)',
+            zIndex: 0
+          }}></div>
           
           {timeline.map((item, i) => (
-            <motion.div 
-              key={item.year}
-              className={`timeline-block ${i % 2 === 0 ? "left" : "right"}`}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -100 : 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <div className="timeline-dot">
-                <div className="dot-inner">{item.icon}</div>
+            <div key={item.year} style={{ display: 'flex', justifyContent: 'center', position: 'relative', marginBottom: '100px', width: '100%' }}>
+              
+              {/* Left Side (Empty or Card) */}
+              <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-end', paddingRight: '60px' }}>
+                {i % 2 === 0 && (
+                  <motion.div 
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.7, type: "spring", bounce: 0.3 }}
+                    whileHover={{ y: -10, boxShadow: '0 20px 40px rgba(0, 242, 255, 0.1)', borderColor: 'rgba(0, 242, 255, 0.4)' }}
+                    style={{
+                      width: '100%',
+                      maxWidth: '480px',
+                      background: 'linear-gradient(135deg, rgba(6, 43, 122, 0.2), rgba(2, 11, 31, 0.8))',
+                      border: '1px solid rgba(0, 242, 255, 0.1)',
+                      borderRadius: '24px',
+                      padding: '40px',
+                      position: 'relative',
+                      backdropFilter: 'blur(10px)',
+                      textAlign: 'right',
+                      overflow: 'hidden'
+                    }}
+                  >
+                    <div style={{
+                      display: 'inline-block',
+                      padding: '8px 16px',
+                      background: 'rgba(0, 242, 255, 0.1)',
+                      color: '#00F2FF',
+                      borderRadius: '8px',
+                      fontSize: '0.9rem',
+                      fontWeight: 'bold',
+                      marginBottom: '20px',
+                      border: '1px solid rgba(0, 242, 255, 0.2)',
+                      boxShadow: '0 0 10px rgba(0, 242, 255, 0.2)'
+                    }}>
+                      {item.year}
+                    </div>
+                    
+                    <h3 style={{ fontSize: '1.8rem', marginBottom: '15px', color: 'white', fontFamily: "'Space Grotesk', sans-serif" }}>{item.title}</h3>
+                    <p style={{ color: 'var(--text-gray)', lineHeight: '1.7', fontSize: '1.05rem', position: 'relative', zIndex: 1 }}>{item.description}</p>
+                    
+                    {/* Giant faded year background */}
+                    <div style={{
+                      position: 'absolute',
+                      top: '50%',
+                      left: '10px',
+                      transform: 'translateY(-50%)',
+                      fontSize: '8rem',
+                      fontWeight: 900,
+                      color: 'rgba(255, 255, 255, 0.02)',
+                      pointerEvents: 'none',
+                      zIndex: 0,
+                      fontFamily: "'Space Grotesk', sans-serif"
+                    }}>
+                      {item.year}
+                    </div>
+                  </motion.div>
+                )}
+              </div>
+
+              {/* Center Dot */}
+              <div style={{
+                width: '60px',
+                height: '60px',
+                position: 'absolute',
+                left: '50%',
+                top: '50%',
+                transform: 'translate(-50%, -50%)',
+                zIndex: 2,
+              }}>
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ type: 'spring', bounce: 0.5, delay: 0.2 }}
+                  whileHover={{ scale: 1.2, rotate: 180 }}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    borderRadius: '50%',
+                    background: '#010816',
+                    border: '3px solid #00F2FF',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#00F2FF',
+                    boxShadow: '0 0 20px rgba(0, 242, 255, 0.5), inset 0 0 15px rgba(0, 242, 255, 0.3)',
+                  }}
+                >
+                  {item.icon}
+                </motion.div>
               </div>
               
-              <div className="timeline-card">
-                <div className="year-tag">{item.year}</div>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-                <div className="card-accent-line"></div>
+              {/* Right Side (Empty or Card) */}
+              <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-start', paddingLeft: '60px' }}>
+                {i % 2 !== 0 && (
+                  <motion.div 
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.7, type: "spring", bounce: 0.3 }}
+                    whileHover={{ y: -10, boxShadow: '0 20px 40px rgba(0, 242, 255, 0.1)', borderColor: 'rgba(0, 242, 255, 0.4)' }}
+                    style={{
+                      width: '100%',
+                      maxWidth: '480px',
+                      background: 'linear-gradient(135deg, rgba(6, 43, 122, 0.2), rgba(2, 11, 31, 0.8))',
+                      border: '1px solid rgba(0, 242, 255, 0.1)',
+                      borderRadius: '24px',
+                      padding: '40px',
+                      position: 'relative',
+                      backdropFilter: 'blur(10px)',
+                      textAlign: 'left',
+                      overflow: 'hidden'
+                    }}
+                  >
+                    <div style={{
+                      display: 'inline-block',
+                      padding: '8px 16px',
+                      background: 'rgba(0, 242, 255, 0.1)',
+                      color: '#00F2FF',
+                      borderRadius: '8px',
+                      fontSize: '0.9rem',
+                      fontWeight: 'bold',
+                      marginBottom: '20px',
+                      border: '1px solid rgba(0, 242, 255, 0.2)',
+                      boxShadow: '0 0 10px rgba(0, 242, 255, 0.2)'
+                    }}>
+                      {item.year}
+                    </div>
+                    
+                    <h3 style={{ fontSize: '1.8rem', marginBottom: '15px', color: 'white', fontFamily: "'Space Grotesk', sans-serif" }}>{item.title}</h3>
+                    <p style={{ color: 'var(--text-gray)', lineHeight: '1.7', fontSize: '1.05rem', position: 'relative', zIndex: 1 }}>{item.description}</p>
+                    
+                    {/* Giant faded year background */}
+                    <div style={{
+                      position: 'absolute',
+                      top: '50%',
+                      right: '10px',
+                      transform: 'translateY(-50%)',
+                      fontSize: '8rem',
+                      fontWeight: 900,
+                      color: 'rgba(255, 255, 255, 0.02)',
+                      pointerEvents: 'none',
+                      zIndex: 0,
+                      fontFamily: "'Space Grotesk', sans-serif"
+                    }}>
+                      {item.year}
+                    </div>
+                  </motion.div>
+                )}
               </div>
               
-              <div className="timeline-year-bg">{item.year}</div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </section>

@@ -122,7 +122,6 @@ export default function Services() {
               <ul className="service-features">
                 {service.features.map(f => <li key={f}>{f}</li>)}
               </ul>
-              <button className="btn btn-outline">Explore {service.title.split(' ')[0]}</button>
             </div>
             <motion.div 
               className="service-image"
