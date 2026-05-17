@@ -20,7 +20,6 @@ yarn-error.log*
 
 # Local env files
 .env*.local
-.env
 
 # Vercel
 .vercel
@@ -35,3 +34,4 @@ Thumbs.db
 
 # Legacy Archives
 /legacy/
+config.bat

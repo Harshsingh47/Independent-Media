@@ -19,6 +19,9 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Independent Medias | Transforming Ideas Into Digital Reality",
   description: "We build AI-powered software, blockchain platforms, modern web applications, and digital brands that scale globally.",
+  icons: {
+    icon: '/logo1.png',
+  },
 };
 
 export default function RootLayout({
